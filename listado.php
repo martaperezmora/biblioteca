@@ -15,9 +15,9 @@
         <br>
         <table>
             <tr>
-                <th>ISBN</th>
                 <th>Título</th>
                 <th>Autor</th>
+                <th>ISBN</th>
                 <th id="thBotones"></th>
             </tr>
             <?php
@@ -32,10 +32,7 @@
                                 <td>".$libro->getAutor()."</td>
                                 <td>".$libro->getIsbn()."</td>
                                 <td id='tdBotones'>
-                                    <form action='libroMod.php' method='post'>
-                                        <input type='submit' value='editar'>
-                                        <input type='hidden' name='isbn' value='".$libro->getIsbn()."'>
-                                    </form>
+                                    <a href='libroMod.php?isbn=".$libro->getIsbn()."' class='botonEnlace'>editar</a>
                                 </td>
                             </tr>";
                     } 

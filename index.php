@@ -1,6 +1,13 @@
 <?php
+    require "libreria.php";
     session_start();
     $_SESSION["libros"] = array();
+    $libros = $_SESSION["libros"];
+    array_push($libros, new libro("Todo esto te daré","Dolores Redondo","4343434343"));  
+    array_push($libros, new libro("Un mundo feliz","Aldous Huxley","9788497594257"));
+    array_push($libros, new libro("El desorden que dejas","Carlos Montero","9788467050271"));
+
+    $_SESSION["libros"] = $libros;
 ?>
 <!DOCTYPE html>
 <html lang="es">
