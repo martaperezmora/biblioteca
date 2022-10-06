@@ -1,8 +1,8 @@
 <?php
-        if($_GET){
+        if($_POST){
             session_start();
             require "libreria.php";
-            $isbn = $_GET["isn"];
+            $isbn = $_POST["isbn"];
             $libros = $_SESSION["libros"];
             foreach($libros as $libro){
                 if($isbn == $libro->getIsbn()){

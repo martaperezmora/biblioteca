@@ -32,8 +32,10 @@
                                 <td>".$libro->getAutor()."</td>
                                 <td>".$libro->getIsbn()."</td>
                                 <td id='tdBotones'>
-                                    <a href='libroMod.php?isbn=".$libro->getIsbn()."' class='botonEnlace'>editar</a>
-                                    <a href='borrar.php?isbn=".$libro->getIsbn()."' class='botonEnlace'>borrar</a>
+                                    <form action='libroMod.php' method='post'>
+                                        <input type='submit' value='editar'>
+                                        <input type='hidden' name='isbn' value='".$libro->getIsbn()."'>
+                                    </form>
                                 </td>
                             </tr>";
                     } 
