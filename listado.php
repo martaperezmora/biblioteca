@@ -26,7 +26,6 @@
                 
                 $libros = $_SESSION["libros"];
 
-             //if(!is_null($libros)){
                     foreach($libros as $libro){
                         echo "<tr>
                                 <td>".$libro->getTitulo()."</td>
@@ -38,7 +37,6 @@
                                 </td>
                             </tr>";
                     } 
-                //}
             ?>
         </table>
     </section>

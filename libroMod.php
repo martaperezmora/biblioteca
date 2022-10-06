@@ -1,3 +1,19 @@
+<?php
+        if($_GET){
+            session_start();
+            require "libreria.php";
+            $isbn = $_GET["isn"];
+            $libros = $_SESSION["libros"];
+            foreach($libros as $libro){
+                if($isbn == $libro->getIsbn()){
+                    $titulo = $libro->getTitulo();
+                    $autor = $libro->getAutor();
+                }
+            }
+            
+        }
+    ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -13,34 +29,17 @@
     <section>
         <form method="post">
             <label for="titulo">Título: </label>
-            <input type="text" name="titulo" id="titulo" required>
+            <input type="text" name="titulo" id="titulo" value=" <?php echo $libro->getTitulo() ?> " required>
             <br>
             <label for="autor">Autor: </label>
-            <input type="text" name="autor" id="autor" required>
+            <input type="text" name="autor" id="autor" value=" <?php echo $libro->getAutor() ?> " required>
             <br>
             <label for="autor">ISBN: </label>
-            <input type="text" name="isbn" id="isbn" required>
+            <input type="text" name="isbn" id="isbn" value=" <?php echo $libro->getIsbn() ?> " required>
             <br>
             <input type="submit" value="aceptar">
         </form>
     </section>
-
-    <?php
-        
-        if($_GET){
-            session_start();
-            require "libreria.php";
-            $isbn = $_GET["isbn"];
-            $libros = $_SESSION["libros"];
-            
-            foreach($libros as $libro){
-                if($isbn == $libro->getIsbn()){
-                    
-                    
-                }
-            }
-
-        }
-    ?>
+   
 </body>
 </html>

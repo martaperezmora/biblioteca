@@ -13,7 +13,7 @@
 </head>
 <body>
     <h1>Mi Biblioteca</h1>
-    <h3>Página Principal</h3>
+    <h2>Página Principal</h2>
     <section>
         <ul>
             <li><a href="listado.php">Listado libros</a></li>
