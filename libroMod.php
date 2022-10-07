@@ -29,14 +29,14 @@
     <section>
         <form action="editarLibro.php" method="post">
             <label for="titulo">Título: </label>
-            <input type="text" name="titulo" id="titulo" value=" <?php echo $libroSeleccionado->getTitulo() ?> " required>
+            <input type="text" name="titulo" id="titulo" value="<?php echo $libroSeleccionado->getTitulo() ?>" required>
             <br>
             <label for="autor">Autor: </label>
-            <input type="text" name="autor" id="autor" value=" <?php echo $libroSeleccionado->getAutor() ?> " required>
+            <input type="text" name="autor" id="autor" value="<?php echo $libroSeleccionado->getAutor() ?>" required>
             <br>
             <label for="autor">ISBN: </label>
-            <input type="text" name="isbn" id="isbn" value=" <?php echo $libroSeleccionado->getIsbn() ?> " required>
-            <input type="hidden" name="isbnViejo" value=" <?php echo $isbn ?> ">
+            <input type="text" name="isbn" id="isbn" value="<?php echo $libroSeleccionado->getIsbn() ?>" required>
+            <input type="hidden" name="isbnViejo" value="<?php echo $isbn ?>">
             <br>
             <input type="submit" value="aceptar">
         </form>

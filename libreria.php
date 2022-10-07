@@ -12,15 +12,15 @@
             }
 
             function setTitulo($titulo){
-                $this -> titulo;
+                $this -> titulo = $titulo;
             }
 
             function setAutor($autor){
-                $this -> autor;
+                $this -> autor = $autor;
             }
 
             function setIsbn($isbn){
-                $this -> isbn;
+                $this -> isbn = $isbn;
             }
 
             function getTitulo(){

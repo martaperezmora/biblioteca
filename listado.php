@@ -33,6 +33,7 @@
                                 <td>".$libro->getIsbn()."</td>
                                 <td id='tdBotones'>
                                     <a href='libroMod.php?isbn=".$libro->getIsbn()."' class='botonEnlace'>editar</a>
+                                    <a href='borrarLibro.php?isbn=".$libro->getIsbn()."' class='botonEnlace'>borrar</a>
                                 </td>
                             </tr>";
                     } 
