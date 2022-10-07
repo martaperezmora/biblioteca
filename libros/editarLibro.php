@@ -1,12 +1,13 @@
 <?php
     if($_POST){
-        require "libreria.php";
+        require "../libreria.php";
         session_start();
         $libros = $_SESSION["libros"];
 
         $titulo = $_POST["titulo"];        //titulo editado
         $autor = $_POST["autor"];          //autor editado
         $isbn = $_POST["isbn"];            //isbn editado
+        $fecha = $_POST["fecha"];          //fecha editada
         $isbnViejo = $_POST["isbnViejo"];  //isbn del libro antes de editarlo
 
         $posicion = 0;
@@ -15,6 +16,7 @@
                 $libro->setTitulo($titulo);
                 $libro->setAutor($autor);
                 $libro->setIsbn($isbn);
+                $libro->setFecha($fecha);
                 $libros[$posicion] = $libro;  //vuelvo a añadir el libro en la misma posicion
                 break;
             }
@@ -22,6 +24,6 @@
         }
 
         $_SESSION["libros"] = $libros;
-        header('Location: listado.php');
+        header('Location: libros.php');
     }
 ?>

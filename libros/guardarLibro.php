@@ -1,13 +1,15 @@
 <?php
         session_start();
-        //$_SESSION["libros"] = array();
+        require "../libreria.php";
+        
         if($_POST){
-            require "libreria.php";
+            
             $titulo = $_POST["titulo"];
             $autor = $_POST["autor"];
             $isbn = $_POST["isbn"];
+            $fecha = $_POST["fecha"];
 
-            $libro = new libro($titulo,$autor,$isbn); // crea objeto libro
+            $libro = new libro($titulo,$autor,$isbn,$fecha); // crea objeto libro
 
             $libros = $_SESSION["libros"];            // extrae la sesion en una variable
  
@@ -15,7 +17,7 @@
 
             $_SESSION["libros"] = $libros;            // devuelve el array a la sesion
 
-            header('Location: listado.php');
+            header('Location: libros.php');
             
         }
     ?>

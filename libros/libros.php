@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>listado</title>
-    <link rel="stylesheet" href="estilos.css">
+    <title>libros - mi biblioteca</title>
+    <link rel="stylesheet" href="../estilos/estilos.css">
 </head>
 <body>
     <h1>Mi Biblioteca</h1>
@@ -18,10 +18,11 @@
                 <th>Título</th>
                 <th>Autor</th>
                 <th>ISBN</th>
+                <th>Fecha</th>
                 <th id="thBotones"></th>
             </tr>
             <?php
-                require "libreria.php";
+                require "../libreria.php";
                 session_start();
                 
                 $libros = $_SESSION["libros"];
@@ -31,6 +32,7 @@
                                 <td>".$libro->getTitulo()."</td>
                                 <td>".$libro->getAutor()."</td>
                                 <td>".$libro->getIsbn()."</td>
+                                <td>".$libro->getFecha()."</td>
                                 <td id='tdBotones'>
                                     <a href='libroMod.php?isbn=".$libro->getIsbn()."' class='botonEnlace'>editar</a>
                                     <a href='borrarLibro.php?isbn=".$libro->getIsbn()."' class='botonEnlace'>borrar</a>
